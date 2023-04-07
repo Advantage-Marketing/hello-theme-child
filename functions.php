@@ -21,3 +21,9 @@ function hello_elementor_child_enqueue_scripts() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'hello_elementor_child_enqueue_scripts', 20 );
+
+// Disable the page title on all pages
+function ele_disable_page_title( $return ) {
+   return false;
+}
+add_filter( 'hello_elementor_page_title', 'ele_disable_page_title' );
